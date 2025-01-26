@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enviar mensaje a WhatsApp</title>
+</head>
+<body>
+  <h1>Enviar mensaje a WhatsApp</h1>
+  <button id="sendMessage">Enviar Mensaje</button>
+
+  <script>
+    document.getElementById('sendMessage').addEventListener('click', function () {
+      const phoneNumber = '59178863091'; // Reemplaza con el número de teléfono con código de país (sin "+").
+      const message = 'Hola, estoy interesado en tu producto. aaaa'; // Mensaje a enviar.
+      
+      // Codificar el mensaje para que sea compatible con URL
+      const encodedMessage = encodeURIComponent(message);
+      
+      // Crear la URL de WhatsApp
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      
+      // Redirigir al usuario a WhatsApp
+      window.open(whatsappUrl, '_blank');
+    });
+  </script>
+</body>
+</html>
